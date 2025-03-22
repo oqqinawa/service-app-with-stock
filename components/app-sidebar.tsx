@@ -3,7 +3,7 @@
 import * as React from "react"
 import {
   ArrowUpCircleIcon,
-  BarChartIcon,
+  BoxIcon,
   CameraIcon,
   ClipboardListIcon,
   DatabaseIcon,
@@ -13,9 +13,9 @@ import {
   FolderIcon,
   HelpCircleIcon,
   LayoutDashboardIcon,
-  ListIcon,
   SearchIcon,
   SettingsIcon,
+  TruckIcon,
   UsersIcon,
 } from "lucide-react"
 
@@ -43,76 +43,26 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: LayoutDashboardIcon,
+      notification: "20",
     },
     {
-      title: "Lifecycle",
-      url: "#",
-      icon: ListIcon,
+      title: "Supplier",
+      url: "/suppliers",
+      icon: TruckIcon,
+      notification: "5",
     },
     {
-      title: "Analytics",
-      url: "#",
-      icon: BarChartIcon,
+      title: "Products",
+      url: "/products",
+      icon: BoxIcon,
     },
     {
-      title: "Projects",
-      url: "#",
+      title: "Services",
+      url: "/services",
       icon: FolderIcon,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: UsersIcon,
-    },
-  ],
-  navClouds: [
-    {
-      title: "Capture",
-      icon: CameraIcon,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Proposal",
-      icon: FileTextIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: FileCodeIcon,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
+      notification: "2",
     },
   ],
   navSecondary: [
@@ -132,20 +82,37 @@ const data = {
       icon: SearchIcon,
     },
   ],
-  documents: [
+  products: [
     {
-      name: "Data Library",
-      url: "#",
+      name: "Incoming Products",
+      url: "/products/add",
       icon: DatabaseIcon,
     },
     {
-      name: "Reports",
-      url: "#",
+      name: "Outcome Products",
+      url: "/products/sell",
       icon: ClipboardListIcon,
     },
     {
-      name: "Word Assistant",
-      url: "#",
+      name: "Products Report",
+      url: "/products/report",
+      icon: FileIcon,
+    },
+  ],
+  services: [
+    {
+      name: "Incoming Services",
+      url: "/services/add",
+      icon: DatabaseIcon,
+    },
+    {
+      name: "Outcome Service",
+      url: "/services/sell",
+      icon: ClipboardListIcon,
+    },
+    {
+      name: "Services Report",
+      url: "/services/report",
       icon: FileIcon,
     },
   ],
@@ -171,7 +138,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
+        <NavDocuments items={data.products} label="Products" />
+        <NavDocuments items={data.services} label="Services" />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
