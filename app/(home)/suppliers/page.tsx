@@ -1,4 +1,10 @@
+import SupplierForm from "./supplier-form"
+
 const SupplierPage = () => {
-  return <div>SupplierPage</div>
+  return (
+    <div>
+      <SupplierForm />
+    </div>
+  )
 }
 export default SupplierPage

@@ -5,6 +5,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { Toaster } from "@/components/ui/sonner"
 
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,6 +20,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
                 {children}
               </div>
             </div>
+            <Toaster />
           </div>
         </SidebarInset>
       </SidebarProvider>
