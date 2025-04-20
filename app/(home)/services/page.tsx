@@ -1,17 +1,17 @@
 import ModalForm from "@/components/modal-form"
-import SupplierForm from "./supplier-form"
+import NewServiceForm from "./new-services-form"
 
-const SupplierPage = () => {
+const ServicesPage = () => {
   return (
     <div>
       <ModalForm
-        buttonTrigger="Add supplier"
+        buttonTrigger="Add Services"
         title="Add Services"
         subtitle="Add a new Service"
       >
-        <SupplierForm />
+        <NewServiceForm submitTitle="add" disabled />
       </ModalForm>
     </div>
   )
 }
-export default SupplierPage
+export default ServicesPage
